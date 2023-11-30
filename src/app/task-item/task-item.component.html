@@ -1,0 +1,17 @@
+<li class="eachitem" appDragDrop [attr.data-iden]="task.id">
+  <section class="item">
+    <span class="fa-li"><i class="fas fa-grip-vertical" draggable="true" (dragstart)="onDragStart()"></i></span>
+    <input type="checkbox" [id]="task.value" class="item-check" [(ngModel)]="task.check" (change)="onCheckboxChange()">
+    <label [for]="task.value" class="item-label">{{ task.value }}</label>
+    <div class="menu-container">
+      <button class="icon-button menu-button" (click)="toggleMenu()">
+        <i class="fas fa-ellipsis-h"></i>
+      </button>
+      <ul class="menu" *ngIf="showMenu">
+        <li class="comp"><i class="fa fa-check"></i> <button class="inside" (click)="completeTask()">Complete</button>
+        </li>
+        <li class="del"><i class="fas fa-trash"></i> <button class="inside" (click)="deleteTask()">Delete</button></li>
+      </ul>
+    </div>
+  </section>
+</li>

@@ -1,0 +1,545 @@
+/* reset  default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+  
+    background-color: #5bb0ff;
+    display: flex;
+    min-height:100%; height:auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  div {
+    display: block;
+  }
+  
+  .master {
+  
+  
+  
+    border-radius: 20px;
+    height: 500px;
+    width: 60%;
+    margin-top: 10px;
+    padding: 0px;
+  
+  }
+  
+  .content {
+    padding: 1rem 1.5rem 0 3rem;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .icon-button {
+    padding-inline-end: 5px;
+    margin-inline-start: auto;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* apply styles to the app container */
+  .container {
+    background: white;
+    margin-top: 0 auto;
+    padding: 10px;
+    border-radius: 20px;
+    -webkit-box-shadow: 15px 20px 25px -13px rgba(0, 0, 0, 0.41);
+  }
+  
+  
+  
+  /* style all inputs  */
+  .input-placeholder {
+    display: flex;
+    gap: 0px;
+    align-items: center;
+    width: 95%;
+    position: relative;
+  
+    margin: 5%;
+    margin-bottom: 2%;
+  
+  }
+  
+  .input-text {
+    width: 100%;
+  }
+  
+  .input-text:focus {
+    outline: 2px solid #5bb0ff;
+  }
+  
+  .input-placeholder input {
+    width: 97%;
+    padding: 3%;
+    height: 40px;
+  }
+  
+  
+  
+  .input-field {
+    border-radius: 6px;
+    border: 1px solid #8e8e8e;
+  
+  }
+  
+  .placeholder span {
+    font-family: FontAwesome;
+  }
+  
+  .input-placeholder input {
+    padding: 10px;
+  
+    border-radius: 6px;
+    border: 1px solid #8e8e8e;
+  }
+  
+  
+  /* .input-placeholder input:valid+.placeholder {
+    display: none;
+  } */
+  
+  .master {
+    font-family: 'Caveat Brush', cursive;
+  }
+  
+  .placeholder {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    bottom: 0;
+    height: 25px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 15px;
+    left: 10px;
+    margin: auto;
+    color: #8e8e8e;
+    display: flex;
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  .placeholder span {
+    color: #8e8e8e;
+    font-family: FontAwesome;
+  }
+  
+  .input-container {
+    position: relative;
+  }
+  
+  .add {
+    margin-inline-start: auto;
+    position: absolute;
+    right: 1.5rem;
+    top: 2.5px;
+    display: none;
+    padding: .4rem;
+    background: linear-gradient(90deg, #56a6fb 50%, #206cbe);
+    border-radius: .25rem;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: white;
+    animation: slideIn .2s ease;
+    outline: none;
+    border: none;
+  }
+  
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  input[type="radio"]:checked+label {
+  
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  input[type="radio"]:hover+label {
+  
+    color: #72b2f6;
+  
+  }
+  
+  
+  input[type="radio"]:checked~.tab-content {
+    display: block;
+  }
+  
+  
+  .tab:has(input[type="radio"]:checked) {
+  
+  
+    border-bottom: 2px solid #007bff;
+  
+  }
+  
+  .tab:has(input[type="radio"]:hover) {
+  
+    cursor: pointer;
+    transition: color .3s;
+  
+  }
+  
+  
+  
+  .tab-content {
+    display: none;
+  }
+  
+  .tab {
+    padding: 3%;
+    padding-bottom: 1%;
+    margin: 0%;
+    font-size: 1rem;
+  
+  
+  
+  
+  
+  }
+  
+  .tex {
+    display: flex;
+    align-items: center;
+  }
+  
+  .delete {
+    margin-top: 5px;
+    ;
+    margin-right: 5px;
+    ;
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    border-radius: .25rem;
+    margin-inline-start: auto;
+    background: linear-gradient(90deg, #56a6fb 50%, #206cbe);
+  }
+  
+  .tab.delete:hover {
+    opacity: 0.8;
+    transition: .2s;
+  }
+  
+  
+  .empty {
+  
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+  
+  }
+  
+  
+  
+  /* Style the task list section */
+  .list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+  }
+  
+  
+  
+  
+  /*style the head section */
+  
+  .head {
+  
+    display: flex;
+    overflow: hidden;
+    margin-left: 2%;
+    padding: 10px;
+  
+    background-color: inherit;
+    border-bottom: 1px solid #ccc;
+    ;
+  }
+  
+  
+  /* Style the buttons that are used to open the tab content */
+  .head button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: 0.3s;
+    height: min-content;
+    width: fit-content;
+  }
+  
+  .head button:hover {
+    background-color: #ddd;
+  }
+  
+  .head button:focus {
+    color: darkcyan;
+  
+  }
+  
+  .head button.delete {
+    color: #e0e0e0;
+  
+  }
+  
+  .sortable-list {
+    width: 425px;
+    padding: 25px;
+    border-radius: 7px;
+    padding: 30px 25px 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .eachitem.dragging {
+    opacity: 0.6;
+  }
+  
+  
+  
+  
+  /*list items style */
+  
+  .items {
+    display: grid;
+  
+  }
+  
+  .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  
+    border-bottom: 1px solid #ccc;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 20px;
+  }
+  
+  .item-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+    width: 20px;
+  
+    transform: scale(1.2);
+    margin-left: 5px;
+  
+  
+  }
+  
+  .custom-list {
+    list-style: none;
+  }
+  
+  .item-label {
+    margin: 0;
+    padding: 0;
+    align-self: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    flex-grow: 1;
+  }
+  
+  
+  .item-check:checked+.item-label {
+  
+    text-decoration: line-through;
+  }
+  
+  .icon {
+  
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #007bff;
+    pointer-events: none;
+  }
+  
+  
+  
+  
+  .task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .task-item button {
+    background-color: #ff3333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  
+  .inside {
+    cursor: pointer;
+  }
+  
+  .task-item:hover {
+    background-color: #e0e0e0;
+  }
+  
+  
+  /*style the menu section with all cases */
+  
+  .menu-button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+  }
+  
+  
+  
+  .menu-button:hover i {
+    background-color: rgba(196, 192, 192, 0.915);
+  
+    border-radius: 40%;
+  }
+  
+  .menu>li>button {
+  
+    transition: 0.25s linear;
+    -webkit-transition: 0.25s linear;
+  
+  
+  }
+  
+  .inside {
+    background-color: inherit;
+    border: none;
+  }
+  
+  .comp:hover i.fa-check,
+  .comp:hover button.inside {
+    color: green;
+  }
+  
+  .del:hover i.fa-trash,
+  .del:hover button.inside {
+    color: red;
+  }
+  
+  .menu-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 60px;
+    margin-top: 5px;
+  }
+  
+  .menu {
+    width: 115px;
+    height: 65px;
+    list-style: none;
+    padding: 0;
+    
+    position: absolute;
+    top: -20%;
+    left: 100%;
+    background-color: #fff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3),
+      0px -5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+  
+  
+  
+  .menu {
+    display: none;
+  }
+  
+  .menu {
+    display: none;
+  }
+  
+  .menu.open {
+    display: block;
+    animation: slideIn .7s ease;
+  }
+  
+  @keyframes slideIn {
+    0% {
+  
+      opacity: 0;
+    }
+  
+    100% {
+  
+      opacity: 1;
+    }
+  }
+  
+  .menu li:first-child {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .menu a {
+    font-size: 15px;
+  }
+  
+  .fa-ul {
+  
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  
+  }
+  
+  
+  .menu li {
+  
+    display: flex;
+  
+  }
+  
+  .menu li i {
+    margin: 5px;
+    transform: scale(.65);
+  
+  }
+  
+  .menu li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  footer {
+    display: block;
+  }
+  
+  .bottom {
+    height: 2rem;
+  }

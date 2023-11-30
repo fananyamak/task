@@ -1,0 +1,36 @@
+<!-- app-header.component.html -->
+
+<header>
+  <div class="input-placeholder">
+    <input type="text" class="input-text" [(ngModel)]="newTask" (keyup.enter)="addTask.emit()"
+      (input)="onInputChange()">
+    <div class="placeholder" *ngIf="!newTask">
+      <span>&#xf550;</span>&nbsp; Add a new task
+    </div>
+    <button class="add" *ngIf="newTask" (click)="addTask.emit()">Add</button>
+  </div>
+  <section class="list">
+
+    <div class="head">
+      <div class="tab tex">
+        <input type="radio" name="task-tab" id="tab-all" [(ngModel)]="selectedTab" value="all"
+          (change)="onTabChange.emit('all')">
+        <label for="tab-all">All</label>
+      </div>
+
+      <div class="tab tex">
+        <input type="radio" name="task-tab" id="tab-pending" [(ngModel)]="selectedTab" value="pending"
+          (change)="onTabChange.emit('pending')">
+        <label for="tab-pending">Pending</label>
+      </div>
+
+      <div class="tab tex">
+        <input type="radio" name="task-tab" id="tab-completed" [(ngModel)]="selectedTab" value="completed"
+          (change)="onTabChange.emit('completed')">
+        <label for="tab-completed">Completed</label>
+      </div>
+
+      <button class="tab delete" (click)="clearList.emit()">Clear All</button>
+    </div>
+  </section>
+</header>

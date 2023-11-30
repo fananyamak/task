@@ -1,0 +1,26 @@
+<!-- task-list.component.html -->
+
+<main>
+  <div class="content">
+
+    <div class="items">
+      <ul class="fa-ul sortable-list" id="item-list">
+        <div *ngIf="displayedTasks.length === 0; else taskList">
+          <div class="empty" style="display: block;">
+            There is no task yet...
+          </div>
+        </div>
+
+        <ng-template #taskList>
+          <div *ngFor="let task of displayedTasks">
+            <app-task-item [task]="task"></app-task-item>
+          </div>
+        </ng-template>
+
+
+      </ul>
+    </div>
+
+
+  </div>
+</main>
